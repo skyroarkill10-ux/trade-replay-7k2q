@@ -1,6 +1,6 @@
 // Trade Replay service worker: app shell network-first, price data cache-first (history never changes;
 // files that do change - the newest month, H1, tick weeks - are fetched as name.wasm?v=<version> and replace the older copy).
-const SHELL = 'tr-shell-v83', DATA = 'tr-data-v1';
+const SHELL = 'tr-shell-v84', DATA = 'tr-data-v1';
 const CORE = ['./', './index.html', './lw.js', './nt.js', './sb.js', './config.js', './manifest.webmanifest', './icon-192.png', './d/index.json'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(SHELL).then(c => c.addAll(CORE)).catch(() => {})); self.skipWaiting(); });
 self.addEventListener('activate', e => e.waitUntil((async () => {
